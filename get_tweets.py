@@ -1,6 +1,7 @@
 import tweepy #https://github.com/tweepy/tweepy
 import csv
 from secrets import *
+import pandas as pd
 
 #Twitter API credentials
 consumer_key = api_key
@@ -46,6 +47,7 @@ def get_all_tweets(screen_name):
     
     #transform the tweepy tweets into a 2D array that will populate the csv 
     outtweets = [[tweet.id_str, tweet.created_at, tweet.text] for tweet in alltweets]
+    print(outtweets)
     
     #write the csv  
     with open(f'data/{screen_name}_tweets.csv', 'w') as f:
