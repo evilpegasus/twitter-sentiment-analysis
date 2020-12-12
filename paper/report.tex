@@ -82,9 +82,18 @@ Using that data, we can perform analyses on the various types of data we collect
 Our data will be directly sourced from Twitter using the Twitter Developer API.
 We will read the tweets into a Pandas Dataframe with the columns
 $$"id", "date", "text"$$
+Due to limitations with the Twitter Developer API, our dataset is capped at the 3200 most recent tweets.
+The timeframe of our data ranges from 14 September, 2020 to 11 December, 2020.
 
 \subsection{Data Analysis}
 
-More text.
+Before performing any analysis of the tweet text data, we must first clean the text.
+Any non-alphanumeric characters and elements such as links are removed.
+Additionally, all retweets are removed since their text were not written by President Trump.
+
+
+Using the text of the tweets, we can assign a sentiment score to each tweet.
+We do this using $textblob$, a Python module for text processing.
+
 
 \end{document}
